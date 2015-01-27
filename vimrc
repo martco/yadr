@@ -106,3 +106,28 @@ set sidescroll=1
 
 " ================ Custom Settings ========================
 so ~/.yadr/vim/settings.vim
+Bundle 'chriskempson/base16-vim'
+Bundle 'slim-template/vim-slim.git'
+Bundle 'wavded/vim-stylus.git'
+
+autocmd BufNewFile,BufRead *.slim   set syntax=slim
+autocmd BufNewFile,BufRead *.styl set filetype=stylus
+
+colorscheme Tomorrow-Night-Eighties
+
+" Clear last search highlighting
+map <Space> :noh<cr>
+
+let g:syntastic_ruby_exec = 'ruby19'
+let g:syntastic_scss_checkers = []
+let g:syntastic_cjsx_checkers=[]
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+
+execute pathogen#infect()
+
+" ================ Color Scheme (martco) ==================
+set background=dark
+set guifont=Inconsolata\ XL:h12
+highlight LineNr ctermfg=grey
+
